@@ -45,7 +45,13 @@ const NumbersPanel = () => {
       <View>
         <View style={styles.pinContainer}>
           {Array.from({length: 4}, (_, i) => i + 1).map((_, index) => (
-            <View style={[styles.pin, index < pin.length && {backgroundColor: colors.white}]} key={index} />
+            <View
+              style={[
+                styles.pin,
+                index < pin.length && {backgroundColor: colors.white},
+              ]}
+              key={index}
+            />
           ))}
         </View>
         <Text style={styles.label}>Create a 4 digit code</Text>

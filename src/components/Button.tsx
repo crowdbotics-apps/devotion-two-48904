@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, Dimensions } from 'react-native';
+import {Pressable, StyleSheet, Text, Dimensions} from 'react-native';
 import colors from '@constants/colors';
 
 const {width} = Dimensions.get('window');

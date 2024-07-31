@@ -11,7 +11,14 @@ interface LottieProps {
 }
 
 const Lottie = ({source, autoPlay = true, loop = true, style}: LottieProps) => {
-  return <LottieView source={source} autoPlay={autoPlay} loop={loop} style={[styles.container, style]} />;
+  return (
+    <LottieView
+      source={source}
+      autoPlay={autoPlay}
+      loop={loop}
+      style={[styles.container, style]}
+    />
+  );
 };
 export default Lottie;
 

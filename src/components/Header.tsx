@@ -11,7 +11,12 @@ const Header = () => {
 
   return (
     <View style={styles.container}>
-      <IonIcon name="menu" size={24} color={colors.white} onPress={() => navigation.toggleDrawer()} />
+      <IonIcon
+        name="menu"
+        size={24}
+        color={colors.white}
+        onPress={() => navigation.toggleDrawer()}
+      />
       <TodayDate />
       <View>
         <IonIcon name="heart-outline" size={24} color={colors.white} />

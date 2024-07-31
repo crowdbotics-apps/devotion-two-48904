@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import dayjs from 'dayjs';
 
 import ScreenWrapper from '@components/ScreenWrapper';
@@ -21,7 +21,9 @@ const Welcome = () => {
   return (
     <ScreenWrapper>
       <View style={styles.container}>
-        <Text style={styles.date}>Today is {dayjs().format('MMM DD, YYYY')}</Text>
+        <Text style={styles.date}>
+          Today is {dayjs().format('MMM DD, YYYY')}
+        </Text>
         <Text style={styles.title}>Welcome</Text>
         <View>
           <Button title="Start Anew" onPress={handleStartAnew} />

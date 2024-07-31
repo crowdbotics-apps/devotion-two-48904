@@ -10,7 +10,12 @@ interface InputProps {
   autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters' | undefined;
 }
 
-const Input = ({value, placeholder, onChange, autoCapitalize = 'none'}: InputProps) => {
+const Input = ({
+  value,
+  placeholder,
+  onChange,
+  autoCapitalize = 'none',
+}: InputProps) => {
   return (
     <View style={styles.container}>
       <TextInput

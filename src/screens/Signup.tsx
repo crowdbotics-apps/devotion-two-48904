@@ -86,8 +86,10 @@ const Signup = () => {
       {step === 4 && (
         <>
           <Typography>
-            One more thing. I don’t store your information on any server as I know how sensitive this information can
-            be. To further protect you, how about we add a passcode? We will use this to login moving forward.
+            One more thing. I don’t store your information on any server as I
+            know how sensitive this information can be. To further protect you,
+            how about we add a passcode? We will use this to login moving
+            forward.
           </Typography>
           <NumbersPanel />
           <Button title="Continue" onPress={handleContinue} />

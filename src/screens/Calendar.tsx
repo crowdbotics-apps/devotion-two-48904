@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import {Calendar} from 'react-native-calendars';
 import {useState} from 'react';
 
@@ -10,7 +10,11 @@ const {width: screenWidth} = Dimensions.get('window');
 
 const RNCalendar = () => {
   const [open, setOpen] = useState(false);
-  const vacation = {key: 'vacation', color: '#097A92', selectedDotColor: '#96278F'};
+  const vacation = {
+    key: 'vacation',
+    color: '#097A92',
+    selectedDotColor: '#96278F',
+  };
   const massage = {key: 'massage', color: 'blue', selectedDotColor: 'blue'};
   const workout = {key: 'workout', color: 'green'};
 
@@ -44,9 +48,17 @@ const RNCalendar = () => {
         //   '2017-10-26': {dots: [massage, workout], disabled: true}
         // }}
         markedDates={{
-          '2024-07-01': {dots: [vacation, massage, workout], selected: true, selectedColor: '#663346'},
+          '2024-07-01': {
+            dots: [vacation, massage, workout],
+            selected: true,
+            selectedColor: '#663346',
+          },
           '2024-07-02': {marked: true},
-          '2024-07-03': {selected: true, marked: true, selectedColor: '#663346'},
+          '2024-07-03': {
+            selected: true,
+            marked: true,
+            selectedColor: '#663346',
+          },
         }}
       />
     </ScreenWrapper>

@@ -7,7 +7,9 @@ import Typography from '@components/Typography';
 const Favourites = () => {
   return (
     <ScreenWrapper headerShown lotieAnimation="devotion">
-      <Typography font="regularItalic">“Oops! You haven’t added anything for me yet, Katherina!</Typography>
+      <Typography font="regularItalic">
+        “Oops! You haven’t added anything for me yet, Katherina!
+      </Typography>
     </ScreenWrapper>
   );
 };

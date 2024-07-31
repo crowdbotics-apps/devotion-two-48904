@@ -2,13 +2,15 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "module": "commonjs",
-    "types": ["react-native"],
+    "types": ["react-native", "node"],
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react",
     "isolatedModules": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "incremental": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@assets/*": ["./src/assets/*"],
@@ -22,11 +24,7 @@
     }
   },
   "include": [
-    "src",
-    "web",
-    "assets",
-    "config",
-    "scripts"
+    "src"
   ],
-  "exclude": ["**/node_modules/*", "**/dist/*", ".github/actions/**/index.js", "**/docs/*"]
+  "exclude": ["**/node_modules/*"]
 }

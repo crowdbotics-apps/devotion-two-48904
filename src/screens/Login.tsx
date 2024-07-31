@@ -25,7 +25,9 @@ const Login = () => {
 
   return (
     <ScreenWrapper lotieAnimation="devotion">
-      <Typography>Welcome back. Can you enter in your email and passcode?</Typography>
+      <Typography>
+        Welcome back. Can you enter in your email and passcode?
+      </Typography>
       <Input value={email} onChange={handleChangeEmail} />
       <NumbersPanel />
 
