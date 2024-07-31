@@ -1,24 +1,22 @@
 module.exports = {
-  presets: ["module:metro-react-native-babel-preset"],
-  env: {
-    production: {
-      plugins: ["react-native-paper/babel"]
-    }
-  },
+  presets: ['module:@react-native/babel-preset'],
   plugins: [
+    'react-native-reanimated/plugin',
     [
-      "module:react-native-dotenv",
+      'module-resolver',
       {
-        moduleName: "react-native-dotenv",
-        path: ".env",
-        blocklist: null,
-        allowlist: null,
-        safe: false,
-        allowUndefined: true
-      }
+        root: ['./src'],
+        alias: {
+          '@assets': './src/assets',
+          '@components': './src/components',
+          '@constants': './src/constants',
+          '@hooks': './src/hooks',
+          '@navigation': './src/navigation',
+          '@screens': './src/screens',
+          '@services': './src/services',
+          '@src': './src',
+        },
+      },
     ],
-    "import-glob-meta",
-    "@babel/plugin-proposal-export-namespace-from",
-    "react-native-reanimated/plugin"
-  ]
-}
+  ],
+};
