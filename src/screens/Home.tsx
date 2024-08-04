@@ -12,8 +12,17 @@ const Home = () => {
     navigation.navigate('UpdateDevotion');
   };
 
+  const handleOpenDrawer = () => {
+    navigation.openDrawer();
+  };
+
   return (
-    <ScreenWrapper headerShown lotieAnimation="devotion" showInfoIcon>
+    <ScreenWrapper
+      headerShown
+      lotieAnimation="devotion"
+      showInfoIcon
+      headerLeftIcon="menu"
+      onPressLeftIcon={handleOpenDrawer}>
       <Typography font="regularItalic">
         "Never lose hope. Storms make people stronger and never last forever." -
         Roy T. Bennett. I like to think of it as starting to work out katherine,

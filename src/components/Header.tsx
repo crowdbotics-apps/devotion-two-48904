@@ -6,20 +6,30 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 import colors from '@constants/colors';
 import TodayDate from './TodayDate';
 
-const Header = () => {
+interface HeaderProps {
+  leftIcon?: string;
+  rightIcon?: string;
+  onPressLeftIcon?: () => void;
+}
+
+const Header = ({leftIcon, rightIcon, onPressLeftIcon}: HeaderProps) => {
   const navigation = useNavigation<any>();
 
   return (
     <View style={styles.container}>
       <IonIcon
-        name="menu"
+        name={leftIcon || 'chevron-back'}
         size={24}
         color={colors.white}
-        onPress={() => navigation.toggleDrawer()}
+        onPress={() =>
+          onPressLeftIcon ? onPressLeftIcon() : navigation.goBack()
+        }
       />
       <TodayDate />
       <View>
-        <IonIcon name="heart-outline" size={24} color={colors.white} />
+        {rightIcon && (
+          <IonIcon name={rightIcon} size={24} color={colors.white} />
+        )}
       </View>
     </View>
   );

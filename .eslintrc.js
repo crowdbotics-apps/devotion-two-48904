@@ -4,5 +4,5 @@ module.exports = {
   extends: '@react-native',
   parserOptions: {
     project: path.resolve(__dirname, './tsconfig.json'),
-},
+  },
 };

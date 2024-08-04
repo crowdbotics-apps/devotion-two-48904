@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
-import {Linking, Pressable, StyleSheet, Text, View} from 'react-native';
-import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
-import {useNavigation} from '@react-navigation/native';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import {DrawerContentScrollView} from '@react-navigation/drawer';
 import colors from '@constants/colors';
 import Typography from '@components/Typography';
 import FadingButton from '@components/FadingButton';

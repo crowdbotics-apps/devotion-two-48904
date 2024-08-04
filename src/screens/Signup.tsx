@@ -8,6 +8,9 @@ import Typography from '@components/Typography';
 import {useNavigation} from '@react-navigation/native';
 import Button from '@components/Button';
 import FadingButton from '@components/FadingButton';
+import {DEVOTIONS} from '@src/CONST';
+import {validateEmail} from '@src/utils/validations';
+import globalStyles from '@src/styles/globalStyles';
 
 const Signup = () => {
   const navigation = useNavigation<any>();
@@ -15,6 +18,7 @@ const Signup = () => {
   const [fullName, setFullName] = useState('');
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
   const [passcode, setPasscode] = useState('');
 
   const handleChangeEmail = (text: string) => {
@@ -32,6 +36,23 @@ const Signup = () => {
   };
 
   const handleContinueStep = () => {
+    if (step === 1 && !fullName) {
+      setErrorMsg('Please enter your name');
+      return;
+    }
+
+    if (step === 2 && !email) {
+      setErrorMsg('Please enter your email');
+      return;
+    }
+
+    if (step === 2 && !validateEmail(email)) {
+      setErrorMsg('Please enter a valid email');
+      return;
+    }
+
+    setErrorMsg('');
+
     setStep(step + 1);
   };
 
@@ -39,50 +60,39 @@ const Signup = () => {
     <ScreenWrapper lotieAnimation="devotion">
       {step === 1 && (
         <>
-          <Typography>Hi there?</Typography>
-          <Typography>What’s your name?</Typography>
+          <Typography style={globalStyles.title}>Hi there?</Typography>
+          <Typography style={globalStyles.subtitle}>
+            What’s your name?
+          </Typography>
           <Input value={fullName} onChange={setFullName} />
-          <Button title="Continue" onPress={handleContinueStep} />
         </>
       )}
-
       {step === 2 && (
         <>
-          <Typography>Hi {fullName}!</Typography>
-          <Typography>Can I also get your email address?</Typography>
+          <Typography style={globalStyles.title}>Hi {fullName}!</Typography>
+          <Typography style={globalStyles.subtitle}>
+            Can I also get your email address?
+          </Typography>
           <Input value={email} onChange={handleChangeEmail} />
-          <Button title="Continue" onPress={handleContinueStep} />
         </>
       )}
-
       {step === 3 && (
-        <View style={styles.pronouns}>
-          <Typography>Perfect!</Typography>
-          <Typography>Do you mind sharing your pronouns?</Typography>
+        <View style={globalStyles.rowGap20}>
+          <Typography style={globalStyles.title}>Perfect!</Typography>
+          <Typography style={globalStyles.subtitle}>
+            Do you mind sharing your pronouns?
+          </Typography>
 
-          <FadingButton
-            title="She/Her"
-            bgColors={['#E5ACC000', '#F780AA']}
-            onPress={() => handleSelectPronoun('She/Her')}
-          />
-          <FadingButton
-            title="He/Him"
-            bgColors={['#58CCFB00', '#217EA3']}
-            onPress={() => handleSelectPronoun('He/Him')}
-          />
-          <FadingButton
-            title="They/Them"
-            bgColors={['#FFF43000', '#C2BD6A']}
-            onPress={() => handleSelectPronoun('They/Them')}
-          />
-          <FadingButton
-            title="Other"
-            bgColors={['#66453000', '#F5853F']}
-            onPress={() => handleSelectPronoun('She/Her')}
-          />
+          {DEVOTIONS.map((devotion, index) => (
+            <FadingButton
+              key={index}
+              title={devotion.title}
+              bgColors={devotion.bgColors}
+              onPress={() => handleSelectPronoun(devotion.title)}
+            />
+          ))}
         </View>
       )}
-
       {step === 4 && (
         <>
           <Typography>
@@ -92,9 +102,14 @@ const Signup = () => {
             forward.
           </Typography>
           <NumbersPanel />
-          <Button title="Continue" onPress={handleContinue} />
         </>
       )}
+      {errorMsg && step !== 4 ? (
+        <Typography style={globalStyles.error}>{errorMsg}</Typography>
+      ) : null}
+      {step < 3 ? (
+        <Button title="Continue" onPress={handleContinueStep} />
+      ) : null}
     </ScreenWrapper>
   );
 };
@@ -102,10 +117,6 @@ const Signup = () => {
 export default Signup;
 
 const styles = StyleSheet.create({
-  container: {},
-  pronouns: {
-    rowGap: 20,
-  },
   welcomeMessage: {
     color: colors.white,
     fontSize: 12,
