@@ -1,0 +1,45 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Metropolis-RegularItalic.otf",
+      "sha1": "d7ace372605f2e657e339d0e6414589b26db0ae4"
+    },
+    {
+      "path": "src/assets/fonts/Metropolis-ThinItalic.otf",
+      "sha1": "ae9856f75446fa706fef916252d349d64d8a93ef"
+    },
+    {
+      "path": "src/assets/fonts/OpenSans-Italic.ttf",
+      "sha1": "f1692eac564e95023e4da341a1b89baae7a65155"
+    },
+    {
+      "path": "src/assets/fonts/metropolis.bold.otf",
+      "sha1": "335e5e57450f52a95b5bc3cd03d91071ef389c28"
+    },
+    {
+      "path": "src/assets/fonts/metropolis.medium.otf",
+      "sha1": "8d5181b06452ce20ac337391dc60b9dd07b083de"
+    },
+    {
+      "path": "src/assets/fonts/metropolis.regular-italic.otf",
+      "sha1": "d7ace372605f2e657e339d0e6414589b26db0ae4"
+    },
+    {
+      "path": "src/assets/fonts/metropolis.regular.otf",
+      "sha1": "dc10ba3cd5aea203f7d0f5af99e72163514a55d5"
+    },
+    {
+      "path": "src/assets/fonts/metropolis.semi-bold.otf",
+      "sha1": "4ebfc059e586c91d024d359f0ed3fc64d9ec4d2c"
+    },
+    {
+      "path": "src/assets/fonts/metropolis.thin-italic.otf",
+      "sha1": "ae9856f75446fa706fef916252d349d64d8a93ef"
+    },
+    {
+      "path": "src/assets/fonts/metropolis.thin.otf",
+      "sha1": "37f2a7b036ac541011cb175c5197056ae814d98f"
+    }
+  ]
+}
