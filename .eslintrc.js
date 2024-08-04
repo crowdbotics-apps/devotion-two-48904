@@ -1,21 +1,8 @@
+const path = require('path');
 module.exports = {
   root: true,
-  extends: "@react-native-community",
-  rules: {
-    "prettier/prettier": [
-      "error",
-      {
-        semi: false,
-        parser: "babel",
-        trailingComma: "none",
-        arrowParens: "avoid"
-      }
-    ],
-    "react-hooks/exhaustive-deps": [
-      "error",
-      {
-        additionalHooks: "(useAnimatedStyle|useDerivedValue|useAnimatedProps)"
-      }
-    ]
-  }
-}
+  extends: '@react-native',
+  parserOptions: {
+    project: path.resolve(__dirname, './tsconfig.json'),
+  },
+};

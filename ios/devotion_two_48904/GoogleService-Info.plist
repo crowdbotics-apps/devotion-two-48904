@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>46757533690-78sjv1gkhcha00tif29k7enbi1p2h95d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.46757533690-78sjv1gkhcha00tif29k7enbi1p2h95d</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>46757533690-42rdsc2hi911i10lhas2g27kdn6l78g8.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBJSNIIygbbLOcHKQcdtZwb7eSmq_YJHeg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>46757533690</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.crowdbotics.devotion</string>
+	<key>PROJECT_ID</key>
+	<string>devotion-621a4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>devotion-621a4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:46757533690:ios:e60bc7b8f613a94075b643</string>
+</dict>
+</plist>

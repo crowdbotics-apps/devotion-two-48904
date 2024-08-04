@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* devotion_two_48904Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* devotion_two_48904Tests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-devotion_two_48904.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-devotion_two_48904.a */; };
+		0E375206820CF35641A23A34 /* libPods-devotion_two_48904.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010B18BFEECBA80782467BC5 /* libPods-devotion_two_48904.a */; };
+		1148AA6F48F940D99EC82A6E /* metropolis.regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9AF12C40C8C749D7A141C71A /* metropolis.regular.otf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-devotion_two_48904-devotion_two_48904Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-devotion_two_48904-devotion_two_48904Tests.a */; };
+		38CF31BCC9A54485B2A8400E /* metropolis.semi-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C6A87E64D8954BE1BECAF676 /* metropolis.semi-bold.otf */; };
+		4170A023FA594F39BDA08BDF /* metropolis.bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B4924B747A534A089E41E70B /* metropolis.bold.otf */; };
+		433DC7BAB86B808527C3354B /* libPods-devotion_two_48904-devotion_two_48904Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8DAC2D00F29F95270F9BB2 /* libPods-devotion_two_48904-devotion_two_48904Tests.a */; };
+		67A88A277DBA4B7894160353 /* Metropolis-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43AC88B0CF2F405D9C2B7B79 /* Metropolis-RegularItalic.otf */; };
+		6F60AC9A1DB74EFB98069297 /* Metropolis-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8BA1DC005C64F179D6C330F /* Metropolis-ThinItalic.otf */; };
+		6FF92CBAB4D1444385C44353 /* metropolis.medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1D2713B9CF5B4CA8BDB62A1F /* metropolis.medium.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		83CC900BC9451D7680C59935 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 26C78EDF4EBD9851C0B360C2 /* PrivacyInfo.xcprivacy */; };
+		A53D5111E0AD4463ABD85FF6 /* metropolis.thin-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390D948B6C1A4DD79EF2DBF6 /* metropolis.thin-italic.otf */; };
+		A5B42FDBDBB4408F9F0688BC /* metropolis.thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5D2222A3D84196BE6E6FC2 /* metropolis.thin.otf */; };
+		DDD716A4E9AA452D9320B474 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A91DE5506F04CFDBD7BE073 /* OpenSans-Italic.ttf */; };
+		E2BB83746129459D807F22AD /* metropolis.regular-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 374CDFB0A7724742BB262CE6 /* metropolis.regular-italic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,19 +41,31 @@
 		00E356EE1AD99517003FC87E /* devotion_two_48904Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = devotion_two_48904Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* devotion_two_48904Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = devotion_two_48904Tests.m; sourceTree = "<group>"; };
+		010B18BFEECBA80782467BC5 /* libPods-devotion_two_48904.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-devotion_two_48904.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* devotion_two_48904.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = devotion_two_48904.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = devotion_two_48904/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = devotion_two_48904/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = devotion_two_48904/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = devotion_two_48904/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = devotion_two_48904/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-devotion_two_48904-devotion_two_48904Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-devotion_two_48904-devotion_two_48904Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-devotion_two_48904.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devotion_two_48904.debug.xcconfig"; path = "Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-devotion_two_48904.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devotion_two_48904.release.xcconfig"; path = "Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig"; path = "Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-devotion_two_48904.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-devotion_two_48904.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = devotion_two_48904/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1D2713B9CF5B4CA8BDB62A1F /* metropolis.medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = metropolis.medium.otf; path = ../src/assets/fonts/metropolis.medium.otf; sourceTree = "<group>"; };
+		26C78EDF4EBD9851C0B360C2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = devotion_two_48904/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2A833EC1632E819882F43021 /* Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig"; path = "Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		374CDFB0A7724742BB262CE6 /* metropolis.regular-italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "metropolis.regular-italic.otf"; path = "../src/assets/fonts/metropolis.regular-italic.otf"; sourceTree = "<group>"; };
+		390D948B6C1A4DD79EF2DBF6 /* metropolis.thin-italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "metropolis.thin-italic.otf"; path = "../src/assets/fonts/metropolis.thin-italic.otf"; sourceTree = "<group>"; };
+		43AC88B0CF2F405D9C2B7B79 /* Metropolis-RegularItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Metropolis-RegularItalic.otf"; path = "../src/assets/fonts/Metropolis-RegularItalic.otf"; sourceTree = "<group>"; };
+		486BE363B15097890A783CBE /* Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig"; path = "Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5A91DE5506F04CFDBD7BE073 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Italic.ttf"; path = "../src/assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		637D4509442C067888ECAB53 /* Pods-devotion_two_48904.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devotion_two_48904.release.xcconfig"; path = "Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = devotion_two_48904/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig"; path = "Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9AF12C40C8C749D7A141C71A /* metropolis.regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = metropolis.regular.otf; path = ../src/assets/fonts/metropolis.regular.otf; sourceTree = "<group>"; };
+		B4924B747A534A089E41E70B /* metropolis.bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = metropolis.bold.otf; path = ../src/assets/fonts/metropolis.bold.otf; sourceTree = "<group>"; };
+		BC5D2222A3D84196BE6E6FC2 /* metropolis.thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = metropolis.thin.otf; path = ../src/assets/fonts/metropolis.thin.otf; sourceTree = "<group>"; };
+		C6A87E64D8954BE1BECAF676 /* metropolis.semi-bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "metropolis.semi-bold.otf"; path = "../src/assets/fonts/metropolis.semi-bold.otf"; sourceTree = "<group>"; };
+		DB8DAC2D00F29F95270F9BB2 /* libPods-devotion_two_48904-devotion_two_48904Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-devotion_two_48904-devotion_two_48904Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15CB6EF4051B4412D0F5AC1 /* Pods-devotion_two_48904.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devotion_two_48904.debug.xcconfig"; path = "Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904.debug.xcconfig"; sourceTree = "<group>"; };
+		E8BA1DC005C64F179D6C330F /* Metropolis-ThinItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Metropolis-ThinItalic.otf"; path = "../src/assets/fonts/Metropolis-ThinItalic.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-devotion_two_48904-devotion_two_48904Tests.a in Frameworks */,
+				433DC7BAB86B808527C3354B /* libPods-devotion_two_48904-devotion_two_48904Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-devotion_two_48904.a in Frameworks */,
+				0E375206820CF35641A23A34 /* libPods-devotion_two_48904.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +115,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				26C78EDF4EBD9851C0B360C2 /* PrivacyInfo.xcprivacy */,
 			);
 			name = devotion_two_48904;
 			sourceTree = "<group>";
@@ -100,10 +125,27 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-devotion_two_48904.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-devotion_two_48904-devotion_two_48904Tests.a */,
+				010B18BFEECBA80782467BC5 /* libPods-devotion_two_48904.a */,
+				DB8DAC2D00F29F95270F9BB2 /* libPods-devotion_two_48904-devotion_two_48904Tests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82CAECBAA1604372BE450B60 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43AC88B0CF2F405D9C2B7B79 /* Metropolis-RegularItalic.otf */,
+				E8BA1DC005C64F179D6C330F /* Metropolis-ThinItalic.otf */,
+				B4924B747A534A089E41E70B /* metropolis.bold.otf */,
+				1D2713B9CF5B4CA8BDB62A1F /* metropolis.medium.otf */,
+				374CDFB0A7724742BB262CE6 /* metropolis.regular-italic.otf */,
+				9AF12C40C8C749D7A141C71A /* metropolis.regular.otf */,
+				C6A87E64D8954BE1BECAF676 /* metropolis.semi-bold.otf */,
+				390D948B6C1A4DD79EF2DBF6 /* metropolis.thin-italic.otf */,
+				BC5D2222A3D84196BE6E6FC2 /* metropolis.thin.otf */,
+				5A91DE5506F04CFDBD7BE073 /* OpenSans-Italic.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -122,6 +164,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				82CAECBAA1604372BE450B60 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -140,10 +183,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-devotion_two_48904.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-devotion_two_48904.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig */,
+				E15CB6EF4051B4412D0F5AC1 /* Pods-devotion_two_48904.debug.xcconfig */,
+				637D4509442C067888ECAB53 /* Pods-devotion_two_48904.release.xcconfig */,
+				2A833EC1632E819882F43021 /* Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig */,
+				486BE363B15097890A783CBE /* Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,12 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "devotion_two_48904Tests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				84964402AB69EABA561568FD /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				16F52DD87FE13060F5FDB733 /* [CP] Embed Pods Frameworks */,
+				37FC769CF033A03C4E47E00F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,14 +219,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "devotion_two_48904" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
-				FD10A7F022414F080027D42C /* Start Packager */,
+				B08AAE112DAD33E1EDC37F8F /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				95F0683EE7E0D21591ADCF19 /* [CP] Embed Pods Frameworks */,
+				CFD1C7C4168CF11422651F5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,6 +286,17 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				83CC900BC9451D7680C59935 /* PrivacyInfo.xcprivacy in Resources */,
+				67A88A277DBA4B7894160353 /* Metropolis-RegularItalic.otf in Resources */,
+				6F60AC9A1DB74EFB98069297 /* Metropolis-ThinItalic.otf in Resources */,
+				4170A023FA594F39BDA08BDF /* metropolis.bold.otf in Resources */,
+				6FF92CBAB4D1444385C44353 /* metropolis.medium.otf in Resources */,
+				E2BB83746129459D807F22AD /* metropolis.regular-italic.otf in Resources */,
+				1148AA6F48F940D99EC82A6E /* metropolis.regular.otf in Resources */,
+				38CF31BCC9A54485B2A8400E /* metropolis.semi-bold.otf in Resources */,
+				A53D5111E0AD4463ABD85FF6 /* metropolis.thin-italic.otf in Resources */,
+				A5B42FDBDBB4408F9F0688BC /* metropolis.thin.otf in Resources */,
+				DDD716A4E9AA452D9320B474 /* OpenSans-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,26 +317,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+		16F52DD87FE13060F5FDB733 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+		37FC769CF033A03C4E47E00F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84964402AB69EABA561568FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,7 +375,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		95F0683EE7E0D21591ADCF19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B08AAE112DAD33E1EDC37F8F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,24 +414,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		CFD1C7C4168CF11422651F5F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,42 +429,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904/Pods-devotion_two_48904-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-devotion_two_48904-devotion_two_48904Tests/Pods-devotion_two_48904-devotion_two_48904Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FD10A7F022414F080027D42C /* Start Packager */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Start Packager";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -430,7 +464,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig */;
+			baseConfigurationReference = 2A833EC1632E819882F43021 /* Pods-devotion_two_48904-devotion_two_48904Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -438,7 +472,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = devotion_two_48904Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,12 +491,12 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig */;
+			baseConfigurationReference = 486BE363B15097890A783CBE /* Pods-devotion_two_48904-devotion_two_48904Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = devotion_two_48904Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,13 +515,16 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-devotion_two_48904.debug.xcconfig */;
+			baseConfigurationReference = E15CB6EF4051B4412D0F5AC1 /* Pods-devotion_two_48904.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5UAZT9HKNY;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = devotion_two_48904/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Devotion;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,7 +535,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowdbotics.devotion;
 				PRODUCT_NAME = devotion_two_48904;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -508,12 +545,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-devotion_two_48904.release.xcconfig */;
+			baseConfigurationReference = 637D4509442C067888ECAB53 /* Pods-devotion_two_48904.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5UAZT9HKNY;
 				INFOPLIST_FILE = devotion_two_48904/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Devotion;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,7 +564,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowdbotics.devotion;
 				PRODUCT_NAME = devotion_two_48904;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -535,8 +575,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -562,9 +603,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CXX = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -580,7 +622,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -597,9 +641,16 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
+					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -607,8 +658,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -634,9 +686,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				CXX = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -645,7 +698,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -661,9 +716,16 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
+					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
