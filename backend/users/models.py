@@ -1,3 +1,4 @@
+from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
@@ -21,6 +22,13 @@ class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = models.CharField(_("Name of User"), blank=True, null=True, max_length=255)
+    pin_hash = models.CharField(max_length=128, blank=True, null=True)
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
+    
+    def set_pin(self, raw_pin):
+        self.pin_hash = make_password(raw_pin)
+
+    def check_pin(self, raw_pin):
+        return check_password(raw_pin, self.pin_hash)
