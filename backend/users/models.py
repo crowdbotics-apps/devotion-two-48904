@@ -4,6 +4,16 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
+PRONOUN_CHOICES = ((0, "She/Her"),
+                        (1, "They/Them"),
+                        (2, "He/Him"),
+                        (3, "Other"))
+
+DEVOTION_CHOICES = ((0, "Content"),
+                    (1, "Anxious"),
+                    (2, "Brave"),
+                    (3, "Lonely"))
+
 
 class User(AbstractUser):
     # WARNING!
@@ -22,13 +32,8 @@ class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = models.CharField(_("Name of User"), blank=True, null=True, max_length=255)
-    pin_hash = models.CharField(max_length=128, blank=True, null=True)
+    # devotion = models.BigIntegerField(choices=DEVOTION_CHOICES, null=True)
+    # pronoun = models.BigIntegerField(choices=PRONOUN_CHOICES)
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
-    
-    def set_pin(self, raw_pin):
-        self.pin_hash = make_password(raw_pin)
-
-    def check_pin(self, raw_pin):
-        return check_password(raw_pin, self.pin_hash)
