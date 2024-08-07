@@ -9,6 +9,29 @@ interface DrawerContainerProps {
   props: any;
 }
 
+const ROUTES = [
+  {
+    title: 'Prior Devotions',
+    route: 'Calendar',
+    bgColors: ['#E5ACC000', '#F780AA'],
+  },
+  {
+    title: 'Favourites',
+    route: 'Favourites',
+    bgColors: ['#58CCFB00', '#217EA3'],
+  },
+  {
+    title: 'Settings',
+    route: 'Settings',
+    bgColors: ['#FFF43000', '#C2BD6A'],
+  },
+  {
+    title: 'Manage Plan',
+    route: 'Subscribe',
+    bgColors: ['#66453000', '#F5853F'],
+  },
+];
+
 function DrawerContainer(props: DrawerContainerProps) {
   const handleNavigate = (route: string) => {
     props?.props?.navigation?.closeDrawer();
@@ -24,30 +47,14 @@ function DrawerContainer(props: DrawerContainerProps) {
         contentContainerStyle={styles.contentContainerStyle}>
         <Typography style={styles.salutation}>Hi Katherine!</Typography>
         <View style={styles.buttons}>
-          <FadingButton
-            title="Prior Devotions"
-            bgColors={['#E5ACC000', '#F780AA']}
-            onPress={() => handleNavigate('Calendar')}
-            varient="outline"
-          />
-          <FadingButton
-            title="Favourites"
-            bgColors={['#58CCFB00', '#217EA3']}
-            onPress={() => handleNavigate('Favourites')}
-            varient="outline"
-          />
-          <FadingButton
-            title="Settings"
-            bgColors={['#FFF43000', '#C2BD6A']}
-            onPress={() => handleNavigate('Settings')}
-            varient="outline"
-          />
-          <FadingButton
-            title="Manage Plan"
-            bgColors={['#66453000', '#F5853F']}
-            onPress={() => handleNavigate('Subscribe')}
-            varient="outline"
-          />
+          {ROUTES.map((route, index) => (
+            <FadingButton
+              key={index}
+              title={route.title}
+              bgColors={route.bgColors}
+              onPress={() => handleNavigate(route.route)}
+            />
+          ))}
         </View>
       </DrawerContentScrollView>
     </View>
@@ -73,5 +80,6 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     marginBottom: 40,
   },
+  customTextStyle: {},
 });
 export default DrawerContainer;

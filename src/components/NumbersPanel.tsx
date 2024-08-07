@@ -1,10 +1,10 @@
 import {useNavigation} from '@react-navigation/native';
 import {Pressable, StyleSheet, View} from 'react-native';
 import FontAwesome6Icon from 'react-native-vector-icons/FontAwesome6';
-import NumberButton from './NumberButton';
+import NumberButton from '@components/NumberButton';
 import React, {useEffect, useState} from 'react';
 import colors from '@constants/colors';
-import Typography from './Typography';
+import Typography from '@components/Typography';
 
 const NumbersPanel = () => {
   const navigation = useNavigation<any>();

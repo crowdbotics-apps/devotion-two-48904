@@ -1,9 +1,10 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+
 import ScreenWrapper from '@components/ScreenWrapper';
 import Typography from '@components/Typography';
 import Button from '@components/Button';
-import {useNavigation} from '@react-navigation/native';
 
 const About = () => {
   const navigation = useNavigation<any>();
@@ -26,6 +27,10 @@ const About = () => {
       </View>
 
       <View style={styles.section}>
+        <Image
+          source={require('../assets/png/SolaceIcon.png')}
+          style={styles.image}
+        />
         <Typography font="semiBold" style={styles.title}>
           SOLACE
         </Typography>
@@ -37,6 +42,10 @@ const About = () => {
         </Typography>
       </View>
       <View style={styles.section}>
+        <Image
+          source={require('../assets/png/ClarityIcon.png')}
+          style={styles.image}
+        />
         <Typography font="semiBold" style={styles.title}>
           Clarity
         </Typography>
@@ -49,6 +58,10 @@ const About = () => {
       </View>
 
       <View style={styles.section}>
+        <Image
+          source={require('../assets/png/BlissIcon.png')}
+          style={styles.image}
+        />
         <Typography font="semiBold" style={styles.title}>
           Bliss
         </Typography>
@@ -83,5 +96,10 @@ const styles = StyleSheet.create({
   section: {
     padding: 20,
     rowGap: 20,
+  },
+  image: {
+    width: 78,
+    height: 78,
+    alignSelf: 'center',
   },
 });

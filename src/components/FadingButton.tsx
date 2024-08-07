@@ -1,74 +1,81 @@
-import React from "react"
-import { View, TouchableOpacity, StyleSheet, Text } from "react-native"
-import LinearGradient from "react-native-linear-gradient"
-import Typography from "./Typography"
-import colors from "@constants/colors"
+import React from 'react';
+import {
+  View,
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  TextStyle,
+} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import Typography from './Typography';
+import colors from '@constants/colors';
 
 interface FadingButtonProps {
   onPress: () => void;
   title: string;
   bgColors: string[];
-  varient?: "filled" | "outline";
+  varient?: 'filled' | 'outline';
   outlinedFill?: any;
+  customTextStyle?: TextStyle;
 }
 
 const FadingButton = ({
   onPress,
   title,
   bgColors,
-  varient = "filled",
-  outlinedFill = colors.secondary
+  varient = 'filled',
+  outlinedFill = colors.secondary,
+  customTextStyle,
 }: FadingButtonProps) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.button}>
       <LinearGradient
         colors={bgColors} // Start and end colors for the gradient
         style={styles.gradient}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }} // Adjust the gradient direction
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 0}} // Adjust the gradient direction
       >
         <View
           style={[
             styles.inner,
-            varient === "outline" && {
+            varient === 'outline' && {
               ...styles.innerOutLine,
-              backgroundColor: outlinedFill
-            }
-          ]}
-        >
-          <Typography>{title}</Typography>
+              backgroundColor: outlinedFill,
+            },
+          ]}>
+          <Typography style={customTextStyle}>{title}</Typography>
         </View>
       </LinearGradient>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   button: {
-    overflow: "hidden"
+    overflow: 'hidden',
   },
   gradient: {
     height: 63,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 15
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 15,
   },
   inner: {
-    position: "absolute",
+    position: 'absolute',
 
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   innerOutLine: {
-    position: "absolute",
+    position: 'absolute',
     top: 2,
     left: 0,
     right: 2,
     bottom: 2,
     backgroundColor: colors.secondary,
     borderRadius: 15,
-    zIndex: 1
-  }
-})
+    zIndex: 1,
+  },
+});
 
-export default FadingButton
+export default FadingButton;

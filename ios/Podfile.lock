@@ -1193,6 +1193,8 @@ PODS:
     - React-utils (= 0.74.3)
   - RNGestureHandler (2.9.0):
     - React-Core
+  - RNIap (12.15.2):
+    - React-Core
   - RNReanimated (3.14.0):
     - DoubleConversion
     - glog
@@ -1320,6 +1322,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNIap (from `../node_modules/react-native-iap`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
@@ -1446,6 +1449,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNIap:
+    :path: "../node_modules/react-native-iap"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -1514,6 +1519,7 @@ SPEC CHECKSUMS:
   React-utils: a06061b3887c702235d2dac92dacbd93e1ea079e
   ReactCommon: f00e436b3925a7ae44dfa294b43ef360fbd8ccc4
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
+  RNIap: 2a3674383dcf383e5b7b3c4680dc87f1b2657326
   RNReanimated: f4ff116e33e0afc3d127f70efe928847c7c66355
   RNScreens: d2a12528d1abe4922e7ee5c9a00dd40c827c2ab5
   RNVectorIcons: 2a2f79274248390b80684ea3c4400bd374a15c90

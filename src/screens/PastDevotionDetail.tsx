@@ -1,9 +1,9 @@
-import React from "react"
-import { StyleSheet, View } from "react-native"
-import ScreenWrapper from "@components/ScreenWrapper"
-import Typography from "@components/Typography"
-import Button from "@components/Button"
-import { useNavigation } from "@react-navigation/native"
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import ScreenWrapper from '@components/ScreenWrapper';
+import Typography from '@components/Typography';
+import Button from '@components/Button';
+import {useNavigation} from '@react-navigation/native';
 
 const PastDevotionDetail = () => {
   const navigation = useNavigation<any>();
@@ -16,12 +16,10 @@ const PastDevotionDetail = () => {
         storm will pass. You will be more than ok. You will be stronger. You
         will be thriving Katherine!
       </Typography>
-
     </ScreenWrapper>
-  )
-}
+  );
+};
 
-export default PastDevotionDetail
+export default PastDevotionDetail;
 
-const styles = StyleSheet.create({
-})
+const styles = StyleSheet.create({});
