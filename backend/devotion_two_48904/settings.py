@@ -10,20 +10,22 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os
-import io
-import environ
-import logging
-import json
 import base64
 import binascii
+import io
+import json
+import logging
+import os
+
+import environ
 import google.auth
-from google.oauth2 import service_account
-from google.cloud import secretmanager
-from google.auth.exceptions import DefaultCredentialsError
-from google.api_core.exceptions import PermissionDenied
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
+from google.api_core.exceptions import PermissionDenied
+from google.auth.exceptions import DefaultCredentialsError
+from google.cloud import secretmanager
+from google.oauth2 import service_account
+
 from modules.manifest import get_modules
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

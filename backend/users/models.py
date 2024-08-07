@@ -1,7 +1,18 @@
+from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+
+PRONOUN_CHOICES = ((0, "She/Her"),
+                        (1, "They/Them"),
+                        (2, "He/Him"),
+                        (3, "Other"))
+
+DEVOTION_CHOICES = ((0, "Content"),
+                    (1, "Anxious"),
+                    (2, "Brave"),
+                    (3, "Lonely"))
 
 
 class User(AbstractUser):
@@ -21,6 +32,8 @@ class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = models.CharField(_("Name of User"), blank=True, null=True, max_length=255)
+    # devotion = models.BigIntegerField(choices=DEVOTION_CHOICES, null=True)
+    # pronoun = models.BigIntegerField(choices=PRONOUN_CHOICES)
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
