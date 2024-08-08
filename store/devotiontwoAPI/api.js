@@ -72,6 +72,12 @@ function api_v1_devotions_user_devotions_favorites_partial_update(payload) {
     payload
   )
 }
+function api_v1_login_create(payload) {
+  return devotiontwoAPI.post(`/api/v1/login/`, payload)
+}
+function api_v1_signup_create(payload) {
+  return devotiontwoAPI.post(`/api/v1/signup/`, payload)
+}
 function rest_auth_login_create(payload) {
   return devotiontwoAPI.post(`/rest-auth/login/`, payload)
 }
@@ -123,6 +129,8 @@ export const apiService = {
   api_v1_devotions_user_devotions_favorites_retrieve,
   api_v1_devotions_user_devotions_favorites_update,
   api_v1_devotions_user_devotions_favorites_partial_update,
+  api_v1_login_create,
+  api_v1_signup_create,
   rest_auth_login_create,
   rest_auth_logout_create,
   rest_auth_password_change_create,
