@@ -1,20 +1,21 @@
-import {useNavigation} from '@react-navigation/native';
 import {Pressable, StyleSheet, View} from 'react-native';
 import FontAwesome6Icon from 'react-native-vector-icons/FontAwesome6';
 import NumberButton from '@components/NumberButton';
 import React, {useEffect, useState} from 'react';
 import colors from '@constants/colors';
 import Typography from '@components/Typography';
+import globalStyles from '@src/styles/globalStyles';
 
-const NumbersPanel = () => {
-  const navigation = useNavigation<any>();
+interface NumbersPanelProps {
+  handleDone: (pin: string) => void;
+  error?: string;
+}
 
+const NumbersPanel = ({handleDone, error}: NumbersPanelProps) => {
   const [pin, setPin] = useState<string>('');
 
   const handleContinueToHome = () => {
-    navigation.navigate('DrawerStack', {
-      screen: 'Home',
-    });
+    handleDone(pin);
   };
 
   useEffect(() => {
@@ -52,6 +53,10 @@ const NumbersPanel = () => {
               />
             ))}
           </View>
+
+          {error ? (
+            <Typography style={globalStyles.error}>{error}</Typography>
+          ) : null}
         </View>
 
         <View style={styles.row}>
@@ -134,7 +139,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   label: {
-    color: colors.white,
+    color: colors.lightBlue,
     fontSize: 16,
     textAlign: 'center',
     marginVertical: 10,

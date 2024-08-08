@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
-import {StyleSheet} from 'react-native';
-import colors from '@constants/colors';
 import ScreenWrapper from '@components/ScreenWrapper';
 import NumbersPanel from '@components/NumbersPanel';
 import Input from '@components/Input';
 import Typography from '@components/Typography';
 import {useNavigation} from '@react-navigation/native';
-import Button from '@components/Button';
+import AuthService from '@services/AuthService';
+import StorageService from '@services/StorageService';
 
 const Login = () => {
   const navigation = useNavigation<any>();
@@ -17,10 +16,29 @@ const Login = () => {
     setEmail(text);
   };
 
-  const handleContinue = () => {
-    navigation.navigate('DrawerStack', {
-      screen: 'Home',
-    });
+  const handleLogin = async (pin: string) => {
+    //api call to save user data
+    try {
+      const payload = {
+        username: email,
+        password: pin,
+      };
+
+      const response: any = await AuthService.login(payload);
+      console.log('response', response);
+
+      if (response?.token) {
+        await StorageService.setItem('token', response.token);
+
+        await StorageService.setItem('user', JSON.stringify(response.user));
+
+        navigation.navigate('DrawerStack', {
+          screen: 'Home',
+        });
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
   };
 
   return (
@@ -29,20 +47,13 @@ const Login = () => {
         Welcome back. Can you enter in your email and passcode?
       </Typography>
       <Input value={email} onChange={handleChangeEmail} />
-      <NumbersPanel />
-
-      <Button title="Continue" onPress={handleContinue} />
+      <NumbersPanel
+        handleDone={(pin: string) => {
+          handleLogin(pin);
+        }}
+      />
     </ScreenWrapper>
   );
 };
 
 export default Login;
-
-const styles = StyleSheet.create({
-  container: {},
-  welcomeMessage: {
-    color: colors.white,
-    fontSize: 12,
-    textAlign: 'center',
-  },
-});
