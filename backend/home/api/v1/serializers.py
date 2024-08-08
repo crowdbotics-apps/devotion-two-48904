@@ -10,10 +10,9 @@ from django.http import HttpRequest
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 
-from home.models import PRONOUN_CHOICES, UserDevotion, UserProfile
+from users.models import UserProfile
 
 User = get_user_model()
-
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
@@ -66,22 +65,23 @@ class SignupSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         profile_data = validated_data.pop('profile', {})
-        
+
         # Create User instance
         user = User(
             email=validated_data.get("email"),
             name=validated_data.get("name"),
             username=generate_unique_username(
-                [validated_data.get("name"), validated_data.get("email"), "user"]
+                [validated_data.get("name"), validated_data.get(
+                    "email"), "user"]
             ),
         )
         user.set_password(validated_data.get("password"))
         user.save()
-    
+
         # Create UserProfile instance if provided
         if profile_data:
             UserProfile.objects.create(user=user, **profile_data)
-        
+
         request = self._get_request()
         setup_user_email(request, user, [])
         return user
@@ -101,15 +101,3 @@ class PasswordSerializer(PasswordResetSerializer):
     """Custom serializer for rest_auth to solve reset password error"""
 
     password_reset_form_class = ResetPasswordForm
-
-# class UserProfileSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = UserProfile
-#         fields = '__all__'
-
-class UserDevotionSerializer(serializers.ModelSerializer):
-    user_profile = UserProfileSerializer(source='user.user', read_only=True)
-    
-    class Meta:
-        model = UserDevotion
-        fields = '__all__'

@@ -21,14 +21,18 @@ from django.views.generic.base import TemplateView
 from drf_spectacular.views import (SpectacularJSONAPIView,
                                    SpectacularSwaggerView)
 from rest_framework import permissions
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Devotion API')
 
 urlpatterns = [
-    
     path("accounts/", include("allauth.urls")),
     path("modules/", include("modules.urls")),
-    path("api/v1/", include("home.api.v1.urls")),
+    # path("api/v1/", include("home.api.v1.urls")),
     path("admin/", admin.site.urls),
     path("users/", include("users.urls", namespace="users")),
+    # path('devices/', include('devices.api.v1.urls', namespace='devices')),
+    path('api/v1/devotions/', include('devotions.api.v1.urls', namespace='devotions')),
     path("rest-auth/", include("dj_rest_auth.urls")),
     # Override email confirm to use allauth's HTML view instead of rest_auth's API view
     path("rest-auth/registration/account-confirm-email/<str:key>/", confirm_email),

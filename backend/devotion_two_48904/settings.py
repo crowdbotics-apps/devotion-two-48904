@@ -44,7 +44,8 @@ try:
     client = secretmanager.SecretManagerServiceClient()
     settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
     name = client.secret_version_path(project, settings_name, "latest")
-    payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
+    payload = client.access_secret_version(
+        name=name).payload.data.decode("UTF-8")
     env.read_env(io.StringIO(payload))
 except (DefaultCredentialsError, PermissionDenied):
     pass
@@ -65,9 +66,10 @@ except Exception as e:
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str("SECRET_KEY", "aQhax7yYMoYAB2g_kVaZCl3r-5MteQMzUjBcvTDFtqqcNSNP9rOMhE61EOyxzqEyk2g")
+SECRET_KEY = env.str(
+    "SECRET_KEY", "aQhax7yYMoYAB2g_kVaZCl3r-5MteQMzUjBcvTDFtqqcNSNP9rOMhE61EOyxzqEyk2g")
 
-ALLOWED_HOSTS = env.list("HOST", default=["*"])
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 SITE_ID = 1
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
@@ -88,12 +90,15 @@ INSTALLED_APPS = [
 LOCAL_APPS = [
     'home',
     'users.apps.UsersConfig',
+    # 'devices.apps.DevicesConfig',
+    'devotions.apps.DevotionsConfig',
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
     'dj_rest_auth.registration',
+    'rest_framework_swagger',
     'bootstrap4',
     'allauth',
     'allauth.account',
@@ -197,7 +202,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), os.path.join(BASE_DIR, 'web_build')]
+STATICFILES_DIRS = [os.path.join(
+    BASE_DIR, 'static'), os.path.join(BASE_DIR, 'web_build')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/mediafiles/'
@@ -215,7 +221,8 @@ LOGIN_REDIRECT_URL = "users:redirect"
 ACCOUNT_ADAPTER = "users.adapters.AccountAdapter"
 SOCIALACCOUNT_ADAPTER = "users.adapters.SocialAccountAdapter"
 ACCOUNT_ALLOW_REGISTRATION = env.bool("ACCOUNT_ALLOW_REGISTRATION", True)
-SOCIALACCOUNT_ALLOW_REGISTRATION = env.bool("SOCIALACCOUNT_ALLOW_REGISTRATION", True)
+SOCIALACCOUNT_ALLOW_REGISTRATION = env.bool(
+    "SOCIALACCOUNT_ALLOW_REGISTRATION", True)
 
 REST_AUTH = {
     # Replace password reset serializer to fix 500 error
@@ -273,7 +280,7 @@ SPECTACULAR_SETTINGS = {
         "persistAuthorization": True,
         "displayOperationId": True,
     },
-    "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAuthenticated"],\
+    "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAuthenticated"], \
     "TITLE": "devotion_two_48904 API",
     "DESCRIPTION": "API documentation for devotion_two_48904 App",
     "VERSION": "v1",
@@ -282,11 +289,12 @@ SPECTACULAR_SETTINGS = {
 if DEBUG or not (EMAIL_HOST_USER and EMAIL_HOST_PASSWORD):
     # output email to console instead of sending
     if not DEBUG:
-        logging.warning("You should setup `SENDGRID_USERNAME` and `SENDGRID_PASSWORD` env vars to send emails.")
+        logging.warning(
+            "You should setup `SENDGRID_USERNAME` and `SENDGRID_PASSWORD` env vars to send emails.")
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
-# GCP config 
+# GCP config
 def google_service_account_config():
     # base64 encoded service_account.json file
     service_account_config = env.str("GS_CREDENTIALS", "")
@@ -296,9 +304,12 @@ def google_service_account_config():
         return json.loads(base64.b64decode(service_account_config))
     except (binascii.Error, ValueError):
         return {}
+
+
 GOOGLE_SERVICE_ACCOUNT_CONFIG = google_service_account_config()
 if GOOGLE_SERVICE_ACCOUNT_CONFIG:
-    GS_CREDENTIALS = service_account.Credentials.from_service_account_info(GOOGLE_SERVICE_ACCOUNT_CONFIG)
+    GS_CREDENTIALS = service_account.Credentials.from_service_account_info(
+        GOOGLE_SERVICE_ACCOUNT_CONFIG)
 GS_BUCKET_NAME = env.str("GS_BUCKET_NAME", "")
 if GS_BUCKET_NAME:
     DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
@@ -312,7 +323,7 @@ if AS_BUCKET_NAME:
     AZURE_TOKEN_CREDENTIAL = DefaultAzureCredential()
     AS_STATIC_CONTAINER = env.str("AS_STATIC_CONTAINER", "static")
     AS_MEDIA_CONTAINER = env.str("AS_MEDIA_CONTAINER", "media")
-    AZURE_URL_EXPIRATION_SECS  = env.int("AZURE_URL_EXPIRATION_SECS", 3600)
+    AZURE_URL_EXPIRATION_SECS = env.int("AZURE_URL_EXPIRATION_SECS", 3600)
     DEFAULT_FILE_STORAGE = "devotion_two_48904.storage_backends.AzureMediaStorage"
     STATICFILES_STORAGE = "devotion_two_48904.storage_backends.AzureStaticStorage"
 

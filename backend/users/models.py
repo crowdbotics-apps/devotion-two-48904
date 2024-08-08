@@ -3,18 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-
-PRONOUN_CHOICES = ((0, "She/Her"),
-                        (1, "They/Them"),
-                        (2, "He/Him"),
-                        (3, "Other"))
-
-DEVOTION_CHOICES = ((0, "Content"),
-                    (1, "Anxious"),
-                    (2, "Brave"),
-                    (3, "Lonely"))
-
-
+from devotions.models import DEVOTION_CHOICES, PRONOUN_CHOICES
 class User(AbstractUser):
     # WARNING!
     """
@@ -31,9 +20,28 @@ class User(AbstractUser):
 
     # First Name and Last Name do not cover name patterns
     # around the globe.
-    name = models.CharField(_("Name of User"), blank=True, null=True, max_length=255)
+    name = models.CharField(_("Name of User"), blank=True,
+                            null=True, max_length=255)
     # devotion = models.BigIntegerField(choices=DEVOTION_CHOICES, null=True)
     # pronoun = models.BigIntegerField(choices=PRONOUN_CHOICES)
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name='profile')
+    pronoun = models.IntegerField(
+        choices=PRONOUN_CHOICES.choices, null=False, blank=False)
+    devotion = models.IntegerField(
+        choices=DEVOTION_CHOICES.choices, null=False, blank=False
+    )
+    # TODO @ian support subscriptions
+    # is_premium = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        verbose_name_plural = 'User Profiles'
