@@ -8,11 +8,69 @@ function api_docs_schema_retrieve(payload) {
     params: { lang: payload.lang }
   })
 }
-function api_v1_login_create(payload) {
-  return devotiontwoAPI.post(`/api/v1/login/`, payload)
+function api_v1_devotions_list(payload) {
+  return devotiontwoAPI.get(`/api/v1/devotions/`)
 }
-function api_v1_signup_create(payload) {
-  return devotiontwoAPI.post(`/api/v1/signup/`, payload)
+function api_v1_devotions_create(payload) {
+  return devotiontwoAPI.post(`/api/v1/devotions/`, payload)
+}
+function api_v1_devotions_retrieve(payload) {
+  return devotiontwoAPI.get(`/api/v1/devotions/${payload.id}/`)
+}
+function api_v1_devotions_update(payload) {
+  return devotiontwoAPI.put(`/api/v1/devotions/${payload.id}/`, payload)
+}
+function api_v1_devotions_partial_update(payload) {
+  return devotiontwoAPI.patch(`/api/v1/devotions/${payload.id}/`, payload)
+}
+function api_v1_devotions_destroy(payload) {
+  return devotiontwoAPI.delete(`/api/v1/devotions/${payload.id}/`)
+}
+function api_v1_devotions_user_devotions_list(payload) {
+  return devotiontwoAPI.get(`/api/v1/devotions/user-devotions/`)
+}
+function api_v1_devotions_user_devotions_create(payload) {
+  return devotiontwoAPI.post(`/api/v1/devotions/user-devotions/`, payload)
+}
+function api_v1_devotions_user_devotions_retrieve(payload) {
+  return devotiontwoAPI.get(`/api/v1/devotions/user-devotions/${payload.id}/`)
+}
+function api_v1_devotions_user_devotions_update(payload) {
+  return devotiontwoAPI.put(
+    `/api/v1/devotions/user-devotions/${payload.id}/`,
+    payload
+  )
+}
+function api_v1_devotions_user_devotions_partial_update(payload) {
+  return devotiontwoAPI.patch(
+    `/api/v1/devotions/user-devotions/${payload.id}/`,
+    payload
+  )
+}
+function api_v1_devotions_user_devotions_destroy(payload) {
+  return devotiontwoAPI.delete(
+    `/api/v1/devotions/user-devotions/${payload.id}/`
+  )
+}
+function api_v1_devotions_user_devotions_favorites_list(payload) {
+  return devotiontwoAPI.get(`/api/v1/devotions/user-devotions/favorites/`)
+}
+function api_v1_devotions_user_devotions_favorites_retrieve(payload) {
+  return devotiontwoAPI.get(
+    `/api/v1/devotions/user-devotions/favorites/${payload.id}/`
+  )
+}
+function api_v1_devotions_user_devotions_favorites_update(payload) {
+  return devotiontwoAPI.put(
+    `/api/v1/devotions/user-devotions/favorites/${payload.id}/`,
+    payload
+  )
+}
+function api_v1_devotions_user_devotions_favorites_partial_update(payload) {
+  return devotiontwoAPI.patch(
+    `/api/v1/devotions/user-devotions/favorites/${payload.id}/`,
+    payload
+  )
 }
 function rest_auth_login_create(payload) {
   return devotiontwoAPI.post(`/rest-auth/login/`, payload)
@@ -49,8 +107,22 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
-  api_v1_login_create,
-  api_v1_signup_create,
+  api_v1_devotions_list,
+  api_v1_devotions_create,
+  api_v1_devotions_retrieve,
+  api_v1_devotions_update,
+  api_v1_devotions_partial_update,
+  api_v1_devotions_destroy,
+  api_v1_devotions_user_devotions_list,
+  api_v1_devotions_user_devotions_create,
+  api_v1_devotions_user_devotions_retrieve,
+  api_v1_devotions_user_devotions_update,
+  api_v1_devotions_user_devotions_partial_update,
+  api_v1_devotions_user_devotions_destroy,
+  api_v1_devotions_user_devotions_favorites_list,
+  api_v1_devotions_user_devotions_favorites_retrieve,
+  api_v1_devotions_user_devotions_favorites_update,
+  api_v1_devotions_user_devotions_favorites_partial_update,
   rest_auth_login_create,
   rest_auth_logout_create,
   rest_auth_password_change_create,
