@@ -4,9 +4,15 @@ import ScreenWrapper from '@components/ScreenWrapper';
 import Typography from '@components/Typography';
 import Button from '@components/Button';
 import {useNavigation} from '@react-navigation/native';
+import {useDevotionsProvider} from '@src/context/DevotionsProvider';
 
 const Home = () => {
+  const {devotions, fetchUserDevotions} = useDevotionsProvider();
   const navigation = useNavigation<any>();
+
+  React.useEffect(() => {
+    fetchUserDevotions();
+  }, []);
 
   const handleUpdateDevotion = () => {
     navigation.navigate('UpdateDevotion');

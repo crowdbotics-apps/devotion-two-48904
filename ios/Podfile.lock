@@ -32,6 +32,9 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - RCT-Folly (2024.01.01.00):
     - boost
     - DoubleConversion
@@ -960,6 +963,9 @@ PODS:
   - React-Mapbuffer (0.74.3):
     - glog
     - React-debug
+  - react-native-loader-kit (2.0.8):
+    - NVActivityIndicatorView (= 5.1.1)
+    - React-Core
   - react-native-safe-area-context (4.10.8):
     - React-Core
   - React-nativeconfig (0.74.3)
@@ -1191,6 +1197,8 @@ PODS:
     - React-logger (= 0.74.3)
     - React-perflogger (= 0.74.3)
     - React-utils (= 0.74.3)
+  - RNCAsyncStorage (1.24.0):
+    - React-Core
   - RNGestureHandler (2.9.0):
     - React-Core
   - RNIap (12.15.2):
@@ -1297,6 +1305,7 @@ DEPENDENCIES:
   - React-jsitracing (from `../node_modules/react-native/ReactCommon/hermes/executor/`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
+  - react-native-loader-kit (from `../node_modules/react-native-loader-kit`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -1321,6 +1330,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNIap (from `../node_modules/react-native-iap`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -1331,6 +1341,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - lottie-ios
+    - NVActivityIndicatorView
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -1399,6 +1410,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   React-Mapbuffer:
     :path: "../node_modules/react-native/ReactCommon"
+  react-native-loader-kit:
+    :path: "../node_modules/react-native-loader-kit"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-nativeconfig:
@@ -1447,6 +1460,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNIap:
@@ -1470,6 +1485,7 @@ SPEC CHECKSUMS:
   hermes-engine: 1f547997900dd0752dc0cc0ae6dd16173c49e09b
   lottie-ios: e047b1d2e6239b787cc5e9755b988869cf190494
   lottie-react-native: 4279da8b681e89c29a2adb9f99985d6cf372d49d
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   RCT-Folly: 02617c592a293bd6d418e0a88ff4ee1f88329b47
   RCTDeprecation: 4c7eeb42be0b2e95195563c49be08d0b839d22b4
   RCTRequired: d530a0f489699c8500e944fde963102c42dcd0c2
@@ -1494,6 +1510,7 @@ SPEC CHECKSUMS:
   React-jsitracing: 6b3c8c98313642140530f93c46f5a6ca4530b446
   React-logger: fa92ba4d3a5d39ac450f59be2a3cec7b099f0304
   React-Mapbuffer: 9f68550e7c6839d01411ac8896aea5c868eff63a
+  react-native-loader-kit: ed18c8ce83b69083211912326897d8286f37d797
   react-native-safe-area-context: b7daa1a8df36095a032dff095a1ea8963cb48371
   React-nativeconfig: fa5de9d8f4dbd5917358f8ad3ad1e08762f01dcb
   React-NativeModulesApple: 585d1b78e0597de364d259cb56007052d0bda5e5
@@ -1518,6 +1535,7 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 0c80752bceb80924cb8a4babc2a8e3ed70d41e87
   React-utils: a06061b3887c702235d2dac92dacbd93e1ea079e
   ReactCommon: f00e436b3925a7ae44dfa294b43ef360fbd8ccc4
+  RNCAsyncStorage: ec53e44dc3e75b44aa2a9f37618a49c3bc080a7a
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
   RNIap: 2a3674383dcf383e5b7b3c4680dc87f1b2657326
   RNReanimated: f4ff116e33e0afc3d127f70efe928847c7c66355

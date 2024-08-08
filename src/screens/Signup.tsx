@@ -11,13 +11,15 @@ import FadingButton from '@components/FadingButton';
 import {DEVOTIONS} from '@src/CONST';
 import {validateEmail} from '@src/utils/validations';
 import globalStyles from '@src/styles/globalStyles';
+import AuthService from '@services/AuthService';
 
 const Signup = () => {
   const navigation = useNavigation<any>();
 
-  const [fullName, setFullName] = useState('');
+  const [name, setName] = useState('');
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState('');
+  const [pronoun, setPronoun] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [passcode, setPasscode] = useState('');
 
@@ -25,18 +27,42 @@ const Signup = () => {
     setEmail(text);
   };
 
-  const handleContinue = () => {
-    navigation.navigate('DrawerStack', {
-      screen: 'Home',
-    });
+  const handleContinue = async () => {
+    //api call to save user data
+
+    console.log('email', email);
+    console.log('name', name);
+    console.log('pronoun', pronoun);
+    console.log('passcode', passcode);
+
+    try {
+      const payload = {
+        username: name,
+        email: email,
+        password: passcode,
+        profile: {
+          pronoun: 1,
+        },
+      };
+
+      const response = await AuthService.signup(payload);
+      if (response) {
+        navigation.navigate('DrawerStack', {
+          screen: 'Home',
+        });
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
   };
 
-  const handleSelectPronoun = (route: string) => {
+  const handleSelectPronoun = (pronoun: string) => {
+    setPronoun(pronoun);
     setStep(step + 1);
   };
 
   const handleContinueStep = () => {
-    if (step === 1 && !fullName) {
+    if (step === 1 && !name) {
       setErrorMsg('Please enter your name');
       return;
     }
@@ -64,12 +90,12 @@ const Signup = () => {
           <Typography style={globalStyles.subtitle}>
             What’s your name?
           </Typography>
-          <Input value={fullName} onChange={setFullName} />
+          <Input value={name} onChange={setName} />
         </>
       )}
       {step === 2 && (
         <>
-          <Typography style={globalStyles.title}>Hi {fullName}!</Typography>
+          <Typography style={globalStyles.title}>Hi {name}!</Typography>
           <Typography style={globalStyles.subtitle}>
             Can I also get your email address?
           </Typography>
@@ -101,10 +127,35 @@ const Signup = () => {
             how about we add a passcode? We will use this to login moving
             forward.
           </Typography>
-          <NumbersPanel />
+          <NumbersPanel
+            error={errorMsg}
+            handleDone={(pin: string) => {
+              setPasscode(pin);
+              setStep(5);
+            }}
+          />
         </>
       )}
-      {errorMsg && step !== 4 ? (
+
+      {step === 5 && (
+        <>
+          <Typography>
+            Can you enter in your passcode again to verify you entered it in
+            correctely?
+          </Typography>
+          <NumbersPanel
+            error={errorMsg}
+            handleDone={(pin: string) => {
+              if (pin === passcode) {
+                handleContinue();
+              } else {
+                setErrorMsg('Passcodes do not match');
+              }
+            }}
+          />
+        </>
+      )}
+      {errorMsg && step !== 4 && step !== 5 ? (
         <Typography style={globalStyles.error}>{errorMsg}</Typography>
       ) : null}
       {step < 3 ? (

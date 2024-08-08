@@ -16,6 +16,7 @@ const globalStyles = StyleSheet.create({
     color: colors.red,
     fontSize: 12,
     textAlign: 'center',
+    marginBottom: 10,
   },
   rowGap20: {
     rowGap: 20,

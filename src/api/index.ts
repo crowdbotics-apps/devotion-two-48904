@@ -1,26 +1,29 @@
-import axios from "axios"
+import StorageService from '@services/StorageService';
+import axios from 'axios';
 
-const url = process.env.baseURL
+const url =
+  process.env.baseURL ?? 'https://deadly-coherent-dove.ngrok-free.app/api/v1/';
 
-export const request = axios.create({
-  baseURL: url
-})
+export const api = axios.create({
+  baseURL: url,
+});
 
-request.interceptors.request.use(function (config: any) {
-  // if (token) {
-  //   config.headers["Authorization"] = "Token " + token
-  // }
+api.interceptors.request.use(async function (config: any) {
+  const token = await StorageService.getItem('token');
+  if (token) {
+    config.headers['Authorization'] = 'Token ' + token;
+  }
 
-  return config
-})
+  return config;
+});
 
-request.interceptors.response.use(
+api.interceptors.response.use(
   (response: any) => {
-    return response
+    return response;
   },
   async function (error: any) {
     if (error?.response?.status === 401) {
     }
-    return Promise.reject(error)
-  }
-)
+    return Promise.reject(error);
+  },
+);

@@ -6,6 +6,7 @@ const colors = {
   white: '#FFFFFF',
   grey: '#D8D8D88E',
   red: '#FF0000',
+  lightBlue: '#95A6BE',
 };
 
 export default colors;

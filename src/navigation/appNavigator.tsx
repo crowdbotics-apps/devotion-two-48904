@@ -1,7 +1,10 @@
 import * as React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  NavigationContainer,
+  NavigationContainerRef,
+} from '@react-navigation/native';
 import Welcome from '../screens/Welcome';
 import Login from '../screens/Login';
 import Emotions from '../screens/Emotions';
@@ -17,7 +20,8 @@ import Signup from '../screens/Signup';
 import UpdateDevotion from '@screens/UpdateDevotion';
 import About from '@screens/About';
 import PastDevotionDetail from '@screens/PastDevotionDetail';
-
+import StorageService from '@services/StorageService';
+import LoadingScreen from '@screens/LoadingScreen';
 export interface RootStackParamList {
   [key: string]: undefined;
 }
@@ -72,13 +76,37 @@ const DrawerStack: React.FC = () => {
 };
 
 const AppNavigator: React.FC = () => {
+  const navigationRef = React.useRef<NavigationContainerRef<any>>(null);
+  const [isNavigationReady, setIsNavigationReady] = React.useState(false);
+
+  const onReady = async () => {
+    console.log('AppNavigator is ready');
+
+    const token = await StorageService.getItem('token');
+    console.log('Token: ', token);
+    setIsNavigationReady(true);
+    if (token) {
+      navigationRef.current?.navigate('DrawerStack', {
+        screen: 'HomeStackScreens',
+      });
+    } else {
+      navigationRef.current?.navigate('Welcome');
+    }
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef} onReady={onReady}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Welcome" component={Welcome} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="DrawerStack" component={DrawerStack} />
+        {isNavigationReady ? (
+          <>
+            <Stack.Screen name="Welcome" component={Welcome} />
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Signup" component={Signup} />
+            <Stack.Screen name="DrawerStack" component={DrawerStack} />
+          </>
+        ) : (
+          <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );
