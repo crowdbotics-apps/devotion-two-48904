@@ -28,6 +28,19 @@ class UserDevotionsListCreateAPIView(ListCreateAPIView):
     authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
+    def get_queryset(self):
+        return 
+
+    def get_queryset(self):
+        queryset = UserDevotions.objects.filter(user=self.request.user)
+        fetch_count = self.request.query_params.get('count', None)
+        if fetch_count is not None:
+            try:
+                fetch_count = int(fetch_count)
+                queryset = queryset[:fetch_count]
+            except ValueError:
+                pass  # Handle the error as needed
+        return queryset
 
 class UserDevotionsRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = UserDevotions.objects.all()

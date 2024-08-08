@@ -35,7 +35,7 @@ class UserProfile(models.Model):
     pronoun = models.IntegerField(
         choices=PRONOUN_CHOICES.choices, null=False, blank=False)
     devotion = models.IntegerField(
-        choices=DEVOTION_CHOICES.choices, null=False, blank=False
+        choices=DEVOTION_CHOICES.choices, null=True, blank=False
     )
     # TODO @ian support subscriptions
     # is_premium = models.BooleanField(default=False)
