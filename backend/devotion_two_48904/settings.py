@@ -65,7 +65,7 @@ except Exception as e:
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str("SECRET_KEY")
+SECRET_KEY = env.str("SECRET_KEY", "aQhax7yYMoYAB2g_kVaZCl3r-5MteQMzUjBcvTDFtqqcNSNP9rOMhE61EOyxzqEyk2g")
 
 ALLOWED_HOSTS = env.list("HOST", default=["*"])
 SITE_ID = 1
