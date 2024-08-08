@@ -11,12 +11,14 @@ from rest_framework.viewsets import ModelViewSet, ViewSet
 from home.api.v1.serializers import (SignupSerializer, UserSerializer)
 
 class SignupViewSet(ModelViewSet):
+    permission_classes = [permissions.AllowAny]
     serializer_class = SignupSerializer
     http_method_names = ["post"]
 
 
 class LoginViewSet(ViewSet):
     """Based on rest_framework.authtoken.views.ObtainAuthToken"""
+    permission_classes = [permissions.AllowAny]
 
     serializer_class = AuthTokenSerializer
 

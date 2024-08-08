@@ -8,10 +8,11 @@ import Typography from '@components/Typography';
 import {useNavigation} from '@react-navigation/native';
 import Button from '@components/Button';
 import FadingButton from '@components/FadingButton';
-import {DEVOTIONS} from '@src/CONST';
+import {PRONOUNS} from '@src/CONST';
 import {validateEmail} from '@src/utils/validations';
 import globalStyles from '@src/styles/globalStyles';
 import AuthService from '@services/AuthService';
+import StorageService from '@services/StorageService';
 
 const Signup = () => {
   const navigation = useNavigation<any>();
@@ -19,7 +20,7 @@ const Signup = () => {
   const [name, setName] = useState('');
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState('');
-  const [pronoun, setPronoun] = useState('');
+  const [pronoun, setPronoun] = useState(0);
   const [errorMsg, setErrorMsg] = useState('');
   const [passcode, setPasscode] = useState('');
 
@@ -29,26 +30,37 @@ const Signup = () => {
 
   const handleContinue = async () => {
     //api call to save user data
-
-    console.log('email', email);
-    console.log('name', name);
-    console.log('pronoun', pronoun);
-    console.log('passcode', passcode);
-
     try {
       const payload = {
         username: name,
         email: email,
         password: passcode,
         profile: {
-          pronoun: 1,
+          pronoun,
+          name,
         },
       };
 
-      const response = await AuthService.signup(payload);
-      if (response) {
+      const response: any = await AuthService.signup(payload);
+
+      const loginResponse: any = await AuthService.login({
+        username: email,
+        password: passcode,
+      });
+
+      console.log('response', response);
+      if (loginResponse?.token) {
+        await StorageService.setItem('token', loginResponse.token);
+        await StorageService.setItem(
+          'user',
+          JSON.stringify(loginResponse.user),
+        );
+
         navigation.navigate('DrawerStack', {
-          screen: 'Home',
+          screen: 'HomeStackScreens',
+          params: {
+            screen: 'UpdateDevotion',
+          },
         });
       }
     } catch (error) {
@@ -56,7 +68,7 @@ const Signup = () => {
     }
   };
 
-  const handleSelectPronoun = (pronoun: string) => {
+  const handleSelectPronoun = (pronoun: number) => {
     setPronoun(pronoun);
     setStep(step + 1);
   };
@@ -109,12 +121,12 @@ const Signup = () => {
             Do you mind sharing your pronouns?
           </Typography>
 
-          {DEVOTIONS.map((devotion, index) => (
+          {PRONOUNS.map((devotion, index) => (
             <FadingButton
               key={index}
               title={devotion.title}
               bgColors={devotion.bgColors}
-              onPress={() => handleSelectPronoun(devotion.title)}
+              onPress={() => handleSelectPronoun(devotion.pronoun)}
             />
           ))}
         </View>

@@ -107,6 +107,7 @@ THIRD_PARTY_APPS = [
     'django_extensions',
     'drf_spectacular',
     'storages',
+    'corsheaders',
     'import_export',
 ]
 MODULES_APPS = get_modules()
@@ -122,6 +123,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+THIRD_PARTY_MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+MIDDLEWARE += THIRD_PARTY_MIDDLEWARE
 
 ROOT_URLCONF = 'devotion_two_48904.urls'
 
@@ -142,8 +149,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'devotion_two_48904.wsgi.application'
-
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -233,7 +238,16 @@ REST_AUTH = {
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
+
+# CORS
+CORS_ALLOW_ALL_ORIGINS = env.bool('CORS_ALLOW_ALL_ORIGINS', default=True)
 
 # Custom user model
 AUTH_USER_MODEL = "users.User"

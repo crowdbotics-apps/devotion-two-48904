@@ -4,6 +4,8 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from devotions.models import DEVOTION_CHOICES, PRONOUN_CHOICES
+
+
 class User(AbstractUser):
     # WARNING!
     """
@@ -32,6 +34,7 @@ class User(AbstractUser):
 class UserProfile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name='profile')
+    name = models.CharField(max_length=255, null=True, blank=True)
     pronoun = models.IntegerField(
         choices=PRONOUN_CHOICES.choices, null=False, blank=False)
     devotion = models.IntegerField(

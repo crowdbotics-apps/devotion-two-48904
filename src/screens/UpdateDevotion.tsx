@@ -6,35 +6,58 @@ import Button from '@components/Button';
 import FadingButton from '@components/FadingButton';
 import {useNavigation} from '@react-navigation/native';
 import colors from '@constants/colors';
+import ProfileService from '@services/ProfileService';
+import {DEVOTIONS} from '@src/CONST';
+import {getUser} from '@src/utils/helpers';
+import StorageService from '@services/StorageService';
 
 const UpdateDevotion = () => {
   const navigation = useNavigation<any>();
 
-  const devotions = [
-    {
-      title: 'Content',
-      bgColors: ['#7B304A00', '#81032F'],
-    },
-    {
-      title: 'Anxious',
-      bgColors: ['#FB587A00', '#9B21A3'],
-    },
-    {
-      title: 'Brave',
-      bgColors: ['#66453000', '#F5853F'],
-    },
-    {
-      title: 'Lonely',
-      bgColors: ['#58CCFB00', '#217EA3'],
-    },
-  ];
+  const [user, setUser] = useState<any>({});
 
-  const [selectedDevotion, setSelectedDevotion] = useState<string | null>(null);
+  const getUser = async () => {
+    const user = await StorageService.getItem('user');
+    console.log('User: ', JSON.parse(user));
 
-  const handleSelectPronoun = (pronoun: string) => {};
+    setUser(JSON.parse(user)?.id);
+  };
 
-  const handleSave = () => {
-    navigation.navigate('Home');
+  React.useEffect(() => {
+    getUser();
+  }, []);
+
+  const [selectedDevotion, setSelectedDevotion] = useState<number | null>(null);
+  const [profile, setProfile] = useState<any>({});
+
+  const handleSelectDevotion = (devotion: number) => {
+    setSelectedDevotion(devotion);
+  };
+
+  const fetchProfile = async () => {
+    try {
+      const res = await ProfileService.getProfile();
+      setSelectedDevotion(res.devotion);
+      setProfile(res);
+    } catch (error) {
+      console.error('Error fetching profile', error);
+    }
+  };
+
+  React.useEffect(() => {
+    fetchProfile();
+  }, []);
+
+  const handleSave = async () => {
+    try {
+      await ProfileService.updateProfile({
+        devotion: selectedDevotion,
+      });
+
+      navigation.navigate('Home');
+    } catch (error) {
+      console.error('Error updating devotion', error);
+    }
   };
 
   return (
@@ -42,18 +65,18 @@ const UpdateDevotion = () => {
       headerShown
       lotieAnimation="devotion"
       style={styles.container}>
-      <Typography font="medium">Hi Katherine!</Typography>
+      <Typography font="medium">Hi {}</Typography>
       <Typography font="regular">
         It’s time to update your Devotion. How would you best dercibe your mood?
       </Typography>
       <View style={styles.buttons}>
-        {devotions.map((devotion, index) => (
+        {DEVOTIONS.map((devotion, index) => (
           <FadingButton
             key={index}
             title={devotion.title}
             bgColors={devotion.bgColors}
-            varient={selectedDevotion === devotion.title ? 'filled' : 'outline'}
-            onPress={() => handleSelectPronoun(devotion.title)}
+            varient="filled"
+            onPress={() => handleSelectDevotion(devotion.devotion)}
             outlinedFill={colors.primary}
           />
         ))}

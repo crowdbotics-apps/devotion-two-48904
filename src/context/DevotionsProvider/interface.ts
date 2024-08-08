@@ -1,13 +1,14 @@
-interface Devotion {
-  id: string;
-  title: string;
-  body: string;
-  date: string;
-  isFavourite: boolean;
+export interface Devotion {
+  id: number;
+  message: string;
+}
+interface UserDevotion {
+  id: number;
+  devotion: Devotion;
 }
 
 export interface DevotionsContextInterface {
-  devotions: Devotion[];
+  userDevotions: UserDevotion[];
   loading: boolean;
   fetchUserDevotions: () => Promise<void>;
 }

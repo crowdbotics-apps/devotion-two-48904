@@ -13,8 +13,7 @@ class DEVOTION_CHOICES(models.IntegerChoices):
     LONELY = 3, 'Lonely'
 
 class Devotions(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.TextField()
+    message = models.TextField()
     date = models.DateField()
     pronoun = models.IntegerField(
         choices=PRONOUN_CHOICES.choices, null=False, blank=False)
@@ -25,7 +24,7 @@ class Devotions(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title
+        return self.message
 
 
 class UserDevotions(models.Model):

@@ -31,6 +31,7 @@ urlpatterns = [
     path("api/v1/", include("home.api.v1.urls")),
     path("admin/", admin.site.urls),
     path("users/", include("users.urls", namespace="users")),
+    path("api/v1/users/", include("users.api.v1.urls", namespace="usersv1")),
     # path('devices/', include('devices.api.v1.urls', namespace='devices')),
     path('api/v1/devotions/', include('devotions.api.v1.urls', namespace='devotions')),
     path("rest-auth/", include("dj_rest_auth.urls")),

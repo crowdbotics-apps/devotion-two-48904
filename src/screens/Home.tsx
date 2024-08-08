@@ -7,7 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useDevotionsProvider} from '@src/context/DevotionsProvider';
 
 const Home = () => {
-  const {devotions, fetchUserDevotions} = useDevotionsProvider();
+  const {userDevotions, fetchUserDevotions} = useDevotionsProvider();
   const navigation = useNavigation<any>();
 
   React.useEffect(() => {
@@ -30,11 +30,9 @@ const Home = () => {
       headerLeftIcon="menu"
       onPressLeftIcon={handleOpenDrawer}>
       <Typography font="regularItalic">
-        "Never lose hope. Storms make people stronger and never last forever." -
-        Roy T. Bennett. I like to think of it as starting to work out katherine,
-        it can be painful at first. Yet over time, you will be stronger. This
-        storm will pass. You will be more than ok. You will be stronger. You
-        will be thriving Katherine!
+        {userDevotions.length > 0
+          ? userDevotions[0].devotion?.message
+          : 'No Devotion found'}
       </Typography>
 
       <View style={styles.footer}>

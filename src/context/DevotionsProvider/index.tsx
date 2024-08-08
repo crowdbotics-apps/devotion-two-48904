@@ -11,24 +11,24 @@ interface DevotionsProviderProps {
 }
 
 const DevotionsProvider = ({children}: DevotionsProviderProps) => {
-  const [devotions, setDevotions] = useState([]);
+  const [userDevotions, setUserDevotions] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchUserDevotions = useCallback(async () => {
     try {
       setLoading(true);
       const response = await DevotionService.getDevotions();
-      console.log('response', response);
-      //   setDevotions(data);
+      setUserDevotions(response);
     } catch (error) {
-      console.error('Error fetching devotions', error);
+      console.error('Error fetching user devotions', error);
     } finally {
       setLoading(false);
     }
   }, []);
 
   return (
-    <DevotionsContext.Provider value={{devotions, loading, fetchUserDevotions}}>
+    <DevotionsContext.Provider
+      value={{userDevotions, loading, fetchUserDevotions}}>
       {children}
     </DevotionsContext.Provider>
   );

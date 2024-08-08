@@ -1,9 +1,10 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import {DrawerContentScrollView} from '@react-navigation/drawer';
 import colors from '@constants/colors';
 import Typography from '@components/Typography';
 import FadingButton from '@components/FadingButton';
+import StorageService from '@services/StorageService';
 
 interface DrawerContainerProps {
   props: any;
@@ -38,6 +39,15 @@ function DrawerContainer(props: DrawerContainerProps) {
     props?.props?.navigation.navigate(route);
   };
 
+  const handleLogout = async () => {
+    console.log('Logout');
+    StorageService.removeItem('token');
+    StorageService.removeItem('user');
+
+    props?.props?.navigation?.closeDrawer();
+    props?.props?.navigation.navigate('Login');
+  };
+
   return (
     <View style={styles.container}>
       <DrawerContentScrollView
@@ -47,6 +57,16 @@ function DrawerContainer(props: DrawerContainerProps) {
         contentContainerStyle={styles.contentContainerStyle}>
         <Typography style={styles.salutation}>Hi Katherine!</Typography>
         <View style={styles.buttons}>
+          <Pressable
+            onPress={handleLogout}
+            style={{
+              padding: 20,
+              paddingLeft: 30,
+              marginBottom: 20,
+              backgroundColor: colors.secondary,
+            }}>
+            <Typography style={styles.customTextStyle}>Log Out</Typography>
+          </Pressable>
           {ROUTES.map((route, index) => (
             <FadingButton
               key={index}
