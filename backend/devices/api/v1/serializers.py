@@ -1,24 +1,27 @@
-import uuid
-
 from rest_framework import serializers
-from django.utils import timezone
-from django.utils.translation import gettext_lazy as _
-
-from fcm_django.api.rest_framework import FCMDeviceSerializer
 from fcm_django.models import FCMDevice
 
 
-class CreateFCMDeviceSerializer(FCMDeviceSerializer):
-    def validate(self, attrs):
-        attrs = super().validate(attrs)
-        device_id = attrs.get('device_id', None)
-        if device_id is None or device_id == '':
-            attrs['device_id'] = uuid.uuid4()
-
-        return attrs
+class FCMDeviceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FCMDevice
+        fields = '__all__'
 
     def create(self, validated_data):
-        instance = FCMDevice.objects.create(**validated_data)
-        from devices.tasks import task_add_user_device_to_firestore
-        task_add_user_device_to_firestore.delay(instance.id)
-        return instance
+        user = validated_data.get('user')
+        registration_id = validated_data.get('registration_id')
+        devices = FCMDevice.objects.filter(user=user, registration_id=registration_id)
+        if devices.exists():
+            return devices.first()
+        return super(self.__class__, self).create(validated_data)
+
+
+class FCMDeviceCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FCMDevice
+        fields = '__all__'
+        extra_kwargs = {
+            'user': {
+                'read_only': True
+            }
+        }

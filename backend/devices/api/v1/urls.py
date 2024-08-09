@@ -10,7 +10,7 @@ router.register(r'', FCMDeviceViewSet, basename='all_devices')
 app_name = 'devices'
 
 urlpatterns = [
+    path('', views.FCMDeviceListAPIView.as_view(), name='all'),
     path('create/', views.CreateFCMDeviceAPIView.as_view(), name='create'),
-    path('all/', views.FCMDeviceListAPIView.as_view(), name='all'),
     path('detail/<int:pk>/', views.FCMDeviceDetailAPIView.as_view(), name='detail'),
 ]
