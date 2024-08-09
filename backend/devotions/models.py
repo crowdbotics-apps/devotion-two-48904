@@ -14,7 +14,7 @@ class DEVOTION_CHOICES(models.IntegerChoices):
 
 class Devotions(models.Model):
     message = models.TextField()
-    date = models.DateField()
+    schedule_at = models.DateTimeField(auto_now_add=True)
     pronoun = models.IntegerField(
         choices=PRONOUN_CHOICES.choices, null=False, blank=False)
     devotion = models.IntegerField(
@@ -31,8 +31,6 @@ class UserDevotions(models.Model):
     user = models.ForeignKey('users.User', on_delete=models.CASCADE)
     devotion = models.ForeignKey(Devotions, on_delete=models.CASCADE)
     is_favorite = models.BooleanField(default=False)
-    # Use provided scheduled date if not, use now
-    schedule_at = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
