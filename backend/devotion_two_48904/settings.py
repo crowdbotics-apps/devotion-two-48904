@@ -38,6 +38,8 @@ env.read_env(env_file)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
+REDIS_URL = env('REDIS_URL', "")
+
 try:
     # Pull secrets from Google Cloud Secret Manager
     _, project = google.auth.default()
@@ -85,7 +87,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites'
+    'django.contrib.sites',
+    'django_rq'
 ]
 LOCAL_APPS = [
     'home',
@@ -342,3 +345,13 @@ if AS_BUCKET_NAME:
     STATICFILES_STORAGE = "devotion_two_48904.storage_backends.AzureStaticStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+RQ_QUEUES = {
+    'default': {
+        'URL': REDIS_URL,
+        'DEFAULT_TIMEOUT': 360,
+        'REDIS_CLIENT_KWARGS': {  
+            'ssl_cert_reqs': None,
+        },
+    },
+}
