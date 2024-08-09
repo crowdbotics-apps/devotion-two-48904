@@ -94,7 +94,7 @@ INSTALLED_APPS = [
 LOCAL_APPS = [
     'home',
     'users.apps.UsersConfig',
-    # 'devices.apps.DevicesConfig',
+    'devices.apps.DevicesConfig',
     'devotions.apps.DevotionsConfig',
 ]
 THIRD_PARTY_APPS = [
